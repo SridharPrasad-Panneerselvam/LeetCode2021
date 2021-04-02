@@ -7,11 +7,11 @@ class ListNode {
     int val;
     ListNode next;
     ListNode() {}
-    ListNode(int val) {
+    ListNode(int val){
     this.val = val;
     }
-    ListNode(int val, ListNode next) 
-    { this.val = val; 
+    ListNode(int val, ListNode next){ 
+    this.val = val; 
     this.next = next;
     }
 }
@@ -33,7 +33,7 @@ class Solution {
     
     }
     
-      public static void main(String[] args) {
+      public static void main(String[] args){
       
          //converging test case
         ListNode converging = new ListNode(-3, new ListNode(-4));

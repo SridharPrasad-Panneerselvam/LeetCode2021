@@ -38,19 +38,18 @@ class Solution{
 
 		if (node.left != null) {
 			printBoundaryLeft(node.left);
-            			System.out.print(node.val + " ");
+            System.out.print(node.val + " ");
 
 		}
 		else if (node.right != null) {
 			printBoundaryLeft(node.right);
-            			System.out.print(node.val + " ");
+            System.out.print(node.val + " ");
 
 		}
 
 	}
 
-	void printBoundaryRight(TreeNode node)
-	{
+	void printBoundaryRight(TreeNode node){
 		if (node == null)
 			return;
 
@@ -59,13 +58,12 @@ class Solution{
 			printBoundaryRight(node.right);
 		}
 		else if (node.left != null) {
-        System.out.print(node.val + " ");
+            System.out.print(node.val + " ");
 			printBoundaryRight(node.left);
 		}
 	}
 
-	void printPerimeter(TreeNode node)
-	{
+	void printPerimeter(TreeNode node){
 		if (node == null)
 			return;
 
@@ -78,8 +76,7 @@ class Solution{
 	}
 
 
-	public static void main(String args[])
-	{     
+	public static void main(String args[]){     
         Solution result = new Solution();
 		TreeNode tree = new TreeNode(1);
 

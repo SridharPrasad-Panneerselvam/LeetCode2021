@@ -4,10 +4,8 @@
 // Time Complexity - O(log(n))
 // Space Complexity - O(1)
 
-class Solution
-{
-	public static int getIndex(int[] nums, int x)
-	{
+class Solution{
+	public static int getIndex(int[] nums, int x){
 		int left = 0;
 		int right = nums.length - 1;
 		int result = -1;
@@ -33,8 +31,7 @@ class Solution
 		return result;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args){
 		int[] nums = {2, 5, 5, 5, 6, 6, 8, 9, 9, 9};
 		int key = 6;
 
@@ -42,8 +39,7 @@ class Solution
 
 		if (index != -1)
 		{
-			System.out.println("First Occurance of element " + key +
-							" is located at index " + index);
+			System.out.println("First Occurance of element " + key + " is located at index " + index);
 		}
 		else {
 			System.out.println("Element not found in array");
