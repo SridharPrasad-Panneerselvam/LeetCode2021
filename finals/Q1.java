@@ -5,9 +5,54 @@
 
 
 public class Solution {
-    public String getResult(char[][] body, int maxTime){
 
+    public static String getResult(char[][] body, int maxTime){
+
+        return canInfect(body, 0,0,maxTime, 0) ? "can infect" : "cannot infect";
     }
-    public static void main(String []args){
+
+    public static boolean canInfect(char[][] body, int x, int y, int maxTime, int time){
+
+        if(x == body.length - 1 && y == body[0].length - 1){
+            return true;
+        }
+
+        if(time == maxTime) return false;
+
+        if(x + 1 < body.length && body[x+1][y] != 'X' && body[x+1][y] != '1'){
+            if(canInfect(body, x+1, y, maxTime, time+1)){
+                return true;
+            }
+        }
+
+        if(x - 1 > 0 && body[x-1][y] != 'X' && body[x-1][y] != '1'){
+            if(canInfect(body, x-1, y, maxTime, time+1)){
+                return true;
+            }
+        }
+
+        if(y + 1 < body[0].length && body[x][y+1] != 'X' && body[x][y+1] != '1'){
+            if(canInfect(body, x, y+1, maxTime, time+1)){
+                return true;
+            }
+        }
+
+        if(y - 1 > 0 && body[x][y-1] != 'X' && body[x][y-1] != '1'){
+            if(canInfect(body, x, y-1, maxTime, time+1)){
+                return true;
+            }
+        }
+
+        return false;
+    }
+    public static void main(String[] args) {
+
+        char[][] matrix = {
+                {'0','0','X','0'},
+                {'X','0','X','X'},
+                {'X','0','0','0'}};
+
+        System.out.println(getResult(matrix, 5));
+
     }
 }
